@@ -94,3 +94,37 @@ journey
         "Сохранение товаров в избранное": [0.3, 0.2]
 
 ```
+
+```mermaid
+gitGraph
+   commit id: "Инициализация проекта"
+   branch develop
+   checkout develop
+   commit id: "Настройка инфраструктуры (Next.js, Express.js)"
+   branch feature/news-service
+   checkout feature/news-service
+   commit id: "Реализация сервиса новостей"
+   commit id: "Интеграция с VK API"
+   checkout develop
+   merge feature/news-service
+   branch feature/study-plan-service
+   checkout feature/study-plan-service
+   commit id: "Реализация сервиса учебных планов"
+   commit id: "Добавление расписания"
+   checkout develop
+   merge feature/study-plan-service
+   branch feature/chat-integration
+   checkout feature/chat-integration
+   commit id: "Интеграция чата с API"
+   checkout develop
+   merge feature/chat-integration
+   branch feature/admin-panel
+   checkout feature/admin-panel
+   commit id: "Создание административной панели"
+   commit id: "Управление пользователями"
+   checkout develop
+   merge feature/admin-panel
+   checkout main
+   merge develop
+   commit id: "Релиз версии 1.0"
+```
